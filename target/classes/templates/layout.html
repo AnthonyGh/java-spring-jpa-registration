@@ -26,10 +26,17 @@
 					<li class="nav-item nav-link"><a class="nav-link" th:href="@{/about}">About</a></li>
 				</ul>
 				
-				<ul class="navbar-nav" sec:authorize="isAuthenticated()">
+				<ul class="navbar-nav" sec:authorize="hasRole('ROLE_ADMIN')">
 						<li class="nav-item nav-link"><a class="nav-link" th:href="@{/logout}">Logout</a></li>
 						<li class="nav-item nav-link"><a class="nav-link" th:href="@{/creer-article}">Créer un article</a></li>
 						<li class="nav-item nav-link"><a class="nav-link" th:href="@{/about}">About</a></li>
+						<li class="nav-item nav-link"><a class="nav-link" th:href="@{/admin}">Administration</a></li>
+				</ul>
+				<ul class="navbar-nav" sec:authorize="hasRole('ROLE_USER')">
+						<li class="nav-item nav-link"><a class="nav-link" th:href="@{/logout}">Logout</a></li>
+						<li class="nav-item nav-link"><a class="nav-link" th:href="@{/creer-article}">Créer un article</a></li>
+						<li class="nav-item nav-link"><a class="nav-link" th:href="@{/about}">About</a></li>
+						<li class="nav-item nav-link"><a class="nav-link" th:href="@{/user}">Profil</a></li>
 				</ul>
 			</div>
 		</nav>
@@ -47,8 +54,8 @@
                 <a th:href="@{/logout}">Sign Out</a>
             </span>
 
-        <script type="text/javascript"
-                src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script th:href="@{/js/bootstrap.min.js}"></script>
+        <script th:href="@{/js/jquery.min.js}"></script>
 
         </footer>
 </body>

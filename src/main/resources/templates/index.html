@@ -19,14 +19,25 @@
 			</div>
 		</div>
 
-		<ul th:each="article : ${articles}">
-			<li>
-			<a th:href="@{'/article/' + ${article.id}}">
-			<h1 class="title" th:text="${article.title}"></h1>
-			</a>
-			<p th:text="${article.description}"></p></li>
+<div class="container">
 
-		</ul>
+<div class="card-deck" th:each="article : ${articles}">
+  <a th:href="@{'/article/' + ${article.id}}">
+  <div class="card">
+    <img class="card-img-top" src="https://www.w3schools.com/w3css/img_snowtops.jpg" alt="Card image cap" />
+    <div class="card-body">
+      <h5 th:text="${article.title}" class="card-title"></h5>
+      <p class="card-text" th:text="${article.description}"></p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Ajouté le <span th:text="${article.dateCreate}"></span></small>
+    </div>
+  </div>
+  </a>
+  </div>
+  
+</div>
+
 	</div>
 </body>
 </html>

@@ -1,3 +1,35 @@
-.container-fluid{
-	padding-top:30px;
+a {
+	text-decoration: none !important;
+}
+
+a:-webkit-any-link {
+	text-decoration: none !important;
+}
+
+
+.container-fluid {
+	padding-top: 30px;
+}
+
+
+.card-img-top:hover{
+	transition: all .3s;
+	-webkit-filter: grayscale(50%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(50%);
+}
+
+@media ( min-width : 576px) {
+	
+	.card-deck {
+		display: inline-block !important;
+		clear: both;
+	}
+	
+	.card-deck .card {
+		max-width: 350px;
+		float: left;
+		margin-right:30px !important;
+		margin-bottom:30px !important;
+		
+	}
 }
