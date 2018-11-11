@@ -11,7 +11,7 @@
 </head>
 <body>
 		<!-- this is header -->
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 			<a class="navbar-brand" th:href="@{/}">TribuneLibre</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#navbarNav" aria-controls="navbarNav"
@@ -28,7 +28,7 @@
 				
 				<ul class="navbar-nav" sec:authorize="isAuthenticated()">
 						<li class="nav-item nav-link"><a class="nav-link" th:href="@{/logout}">Logout</a></li>
-						<li class="nav-item nav-link"><a class="nav-link" th:href="@{/create}">Créer un article</a></li>
+						<li class="nav-item nav-link"><a class="nav-link" th:href="@{/creer-article}">Créer un article</a></li>
 						<li class="nav-item nav-link"><a class="nav-link" th:href="@{/about}">About</a></li>
 				</ul>
 			</div>
@@ -37,5 +37,19 @@
 	<div layout:fragment="content"></div>
 	
 
+
+<footer>
+        <!-- this is footer -->
+        © 2017 mkyong.com
+            <span sec:authorize="isAuthenticated()">
+                | Logged user: <span sec:authentication="name"></span> |
+                Roles: <span sec:authentication="principal.authorities"></span> |
+                <a th:href="@{/logout}">Sign Out</a>
+            </span>
+
+        <script type="text/javascript"
+                src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        </footer>
 </body>
 </html>

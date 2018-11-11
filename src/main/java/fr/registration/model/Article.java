@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 public class Article {
 	
@@ -23,6 +25,7 @@ public class Article {
 	@Column(length = 10000)
 	private String content;
 	
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private LocalDate dateCreate;
 	
 	public Integer getId() {

@@ -17,24 +17,35 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private UserService userService;
+    
+    //Injection de dépendance, pour redirection personnalisé après login
+  	@Autowired
+  	private SimpleAuthenticationSuccessHandler successHandler;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
+        	.csrf().disable()
                 .authorizeRequests()
                     .antMatchers(
-                    		"/**",
+                    		"/",
+                    		"/about",
+                    		"/registration",
+                    		"/article/**",
                             "/js/**",
                             "/css/**",
                             "/img/**",
                             "/webjars/**").permitAll()
-                    .antMatchers("/admin/**").hasAnyRole("ADMIN")
-    				.antMatchers("/user/**", "/user").hasAnyRole("NORMAL")
+                    .antMatchers("/admin", "/admin/**").hasAnyRole("ADMIN")
+    				.antMatchers("/user", "/user/**").hasAnyRole("USER", "ADMIN")
                     .anyRequest().authenticated()
                 .and()
                     .formLogin()
                         .loginPage("/login")
-                            .permitAll()
+                        	.defaultSuccessUrl("/") //redirection après login
+                        	.successHandler(successHandler)
+								.failureUrl("/login?error") //redirection après echec de login
+									.permitAll()
                 .and()
                     .logout()
                         .invalidateHttpSession(true)
