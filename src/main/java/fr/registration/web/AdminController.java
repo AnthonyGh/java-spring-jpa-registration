@@ -38,6 +38,8 @@ public class AdminController {
 		 return "/admin/admin";
 	 }
 	
+	
+	
 	@GetMapping("/user")
 	public String user(Model model, Principal principal) {
 		

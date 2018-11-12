@@ -7,10 +7,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap4.css}" />
+
 
 <title>Registration</title>
+
 </head>
+
+
+
 <body>
 	<div layout:fragment="content">
 		<div class="container">
@@ -42,13 +46,17 @@
 
 			<nav>
 				<ul class="pagination">
-					<li th:each="p:${pages}" th:class="${p==pageCourante}?'page-item active':''">
-						<a th:text="${p}" th:href="@{index(page=${p})}" class="page-link"></a>
+					<li th:each="p:${pages}"
+						th:class="${p==pageCourante}?'page-item active':''"><a
+						th:text="${p}" th:href="@{index(page=${p})}" class="page-link"></a>
 					</li>
 				</ul>
 			</nav>
 		</div>
 
 	</div>
+
+
+
 </body>
 </html>
