@@ -24,5 +24,7 @@ public interface ArticleService{
 	public Article findArticleById(Integer id);
 	
 	public Page<Article> findAllByOrderByIdDesc(Pageable pageable);
+	
+	public List<Article> findAllArticlesByEmail(String email);
 
 }

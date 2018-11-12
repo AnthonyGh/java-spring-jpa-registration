@@ -16,19 +16,24 @@
 <div class="container">
 
     <div class="starter-template">
-        <h1>User page (Spring Security protected)</h1>
+    
+    	<h1>Bonjour <span th:text="${user.firstName}"></span></h1>
+    	
+        <p>Voici ta page de profil :</p>
+
+		<p th:inline="text">Ton adresse email est :  [[${#httpServletRequest.remoteUser}]]!</p>
 		
-        <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
-			
+		<p><a th:href="@{/logout}" class="btn btn-primary">Se déconnecter</a></p>
+		
        <table class="table table-striped">
 			<thead>
 				<tr>
-					<th>ID</th><th>Titre</th><th>description</th><th>date</th><th>Supprimer</th><th>Editer</th>
+					<th>Titre</th><th>description</th><th>date</th><th>Supprimer</th><th>Editer</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr th:each="e:${articles}">
-					<td th:text="${e.id}"></td>
+					
 					<td th:text="${e.title}"></td>
 					<td th:text="${e.description}"></td>
 					<td th:text="${e.dateCreate}"></td>
@@ -38,9 +43,7 @@
 			</tbody>
 		</table>
         
-        <form th:action="@{/logout}" method="post">
-            <input type="submit" value="Sign Out"/>
-        </form>
+       
 		
     </div>
 

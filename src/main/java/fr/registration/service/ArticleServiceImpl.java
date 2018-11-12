@@ -51,4 +51,9 @@ public class ArticleServiceImpl implements ArticleService{
 		return dao.findAllByOrderByIdDesc(pageable);
 	}
 
+	@Override
+	public List<Article> findAllArticlesByEmail(String email) {
+		return dao.findAllByEmail(email);
+	}
+
 }

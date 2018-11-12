@@ -1,6 +1,7 @@
 package fr.registration.web;
 
 import java.io.IOException;
+import java.security.Principal;
 import java.time.LocalDate;
 
 import javax.validation.Valid;
@@ -44,13 +45,15 @@ public class ArticleController {
 	}
 	
 	@RequestMapping(value="/saveArticle", method=RequestMethod.POST)
-	public String saveArticle(@Valid Article article, BindingResult bindingResult) throws IllegalStateException, IOException {
+	public String saveArticle(@Valid Article article, BindingResult bindingResult, Principal principal) throws IllegalStateException, IOException {
 		if(bindingResult.hasErrors()) {
 			return "/user/createformarticle";
 		}
 		
-		article.setDateCreate(LocalDate.now());
+		String userEmail = principal.getName();
 		
+		article.setDateCreate(LocalDate.now());
+		article.setEmail(userEmail);
 		articleService.createArticle(article);
 		
 		return "redirect:user";
@@ -75,6 +78,8 @@ public class ArticleController {
 		
 		return "redirect:user";
 	}
+	
+	
 	
 	@RequestMapping(value="/supprimer")
 	public String supprimer(Integer id) {

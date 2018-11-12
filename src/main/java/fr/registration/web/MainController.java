@@ -24,7 +24,7 @@ public class MainController {
     	
     	
     	
-    	Pageable pageable = new PageRequest(page,3);
+    	Pageable pageable = new PageRequest(page,6);
     	Page<Article> pageArticles = articleService.findAllByOrderByIdDesc(pageable);
 
     	int pagesCount = pageArticles.getTotalPages();

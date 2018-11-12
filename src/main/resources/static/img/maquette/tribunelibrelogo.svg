@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.1 r15371"
+   sodipodi:docname="tribunelibrelogo.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="872.21756"
+     inkscape:cy="765.85307"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1018"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="opacity:1;fill:#343a40;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:1.00031877;stroke-opacity:1;paint-order:normal"
+       id="rect4485"
+       width="173.1131"
+       height="86.934525"
+       x="2.2678566"
+       y="58.874992" />
+    <circle
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:1.00031877;stroke-opacity:1;paint-order:normal"
+       id="path4487"
+       cx="69.358627"
+       cy="100.49522"
+       r="28.537201"
+       inkscape:export-xdpi="133.50996"
+       inkscape:export-ydpi="133.50996" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:75.69029999px;line-height:125%;font-family:'Adobe Kaiti Std';-inkscape-font-specification:'Adobe Kaiti Std Bold';letter-spacing:0px;word-spacing:0px;fill:#343a40;fill-opacity:1;stroke:none;stroke-width:1.18266094px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="43.703415"
+       y="142.48575"
+       id="text4491"><tspan
+         sodipodi:role="line"
+         id="tspan4489"
+         x="43.703415"
+         y="142.48575"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Adobe Kaiti Std';-inkscape-font-specification:'Adobe Kaiti Std Bold';fill:#343a40;fill-opacity:1;stroke-width:1.18266094px">T</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:62.08955383px;line-height:125%;font-family:'Adobe Kaiti Std';-inkscape-font-specification:'Adobe Kaiti Std Bold';letter-spacing:0px;word-spacing:0px;fill:#343a40;fill-opacity:1;stroke:none;stroke-width:0.97014928px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="68.361557"
+       y="115.62086"
+       id="text4495"><tspan
+         sodipodi:role="line"
+         id="tspan4493"
+         x="68.361557"
+         y="115.62086"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Adobe Kaiti Std';-inkscape-font-specification:'Adobe Kaiti Std Bold';fill:#343a40;fill-opacity:1;stroke-width:0.97014928px">L</tspan></text>
+  </g>
+</svg>

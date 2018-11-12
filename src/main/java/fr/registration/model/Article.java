@@ -28,6 +28,8 @@ public class Article {
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private LocalDate dateCreate;
 	
+	private String email;
+	
 	public Integer getId() {
 		return id;
 	}
@@ -67,6 +69,16 @@ public class Article {
 	public void setDateCreate(LocalDate dateCreate) {
 		this.dateCreate = dateCreate;
 	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
+	
 	
 	
 
