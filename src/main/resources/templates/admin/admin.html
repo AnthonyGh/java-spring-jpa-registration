@@ -23,17 +23,19 @@
        <table class="table table-striped table-dark">
 			<thead>
 				<tr>
-					<th>ID</th><th>Titre</th><th>description</th><th>date</th>
+					<th>ID</th><th>Titre</th><th>description</th><th>date</th><th>Supprimer</th><th>Editer</th><th>Voir</th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr th:each="e:${articles}">
+			<tr th:each="i : ${#numbers.sequence(articles.size() - 1, 0, -1)}" th:with="e=articles[i]">
+				<!-- <tr th:each="e:${articles}"> -->
 					<td th:text="${e.id}"></td>
 					<td th:text="${e.title}"></td>
 					<td th:text="${e.description}"></td>
 					<td th:text="${e.dateCreate}"></td>
 					<td><a onclick="return confirm('Confirmer la suppression ?')" th:href="@{supprimer(id=${e.id})}">Supprimer</a></td>
 					<td><a th:href="@{editer(id=${e.id})}">Editer</a></td>
+					<td><a th:href="@{'/article/' + ${e.id}}">Voir</a></td>
 				</tr>
 			</tbody>
 		</table>

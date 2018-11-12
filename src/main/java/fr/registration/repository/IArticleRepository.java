@@ -1,5 +1,7 @@
 package fr.registration.repository;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
@@ -10,5 +12,7 @@ import fr.registration.model.Article;
 public interface IArticleRepository extends JpaRepository<Article, Integer>{
 
 	public  Article findArticleById(Integer id);
+	
+	public Page<Article> findAllByOrderByIdDesc(Pageable pageable);
 	
 }

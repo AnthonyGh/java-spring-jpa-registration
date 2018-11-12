@@ -3,6 +3,8 @@ package fr.registration.service;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import fr.registration.model.Article;
@@ -42,6 +44,11 @@ public class ArticleServiceImpl implements ArticleService{
 	@Override
 	public Article findArticleById(Integer id) {
 		return dao.findArticleById(id);
+	}
+
+	@Override
+	public Page<Article> findAllByOrderByIdDesc(Pageable pageable) {
+		return dao.findAllByOrderByIdDesc(pageable);
 	}
 
 }

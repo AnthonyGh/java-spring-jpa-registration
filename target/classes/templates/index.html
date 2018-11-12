@@ -19,24 +19,35 @@
 			</div>
 		</div>
 
-<div class="container">
+		<div class="container">
 
-<div class="card-deck" th:each="article : ${articles}">
-  <a th:href="@{'/article/' + ${article.id}}">
-  <div class="card">
-    <img class="card-img-top" src="https://www.w3schools.com/w3css/img_snowtops.jpg" alt="Card image cap" />
-    <div class="card-body">
-      <h5 th:text="${article.title}" class="card-title"></h5>
-      <p class="card-text" th:text="${article.description}"></p>
-    </div>
-    <div class="card-footer">
-      <small class="text-muted">Ajouté le <span th:text="${article.dateCreate}"></span></small>
-    </div>
-  </div>
-  </a>
-  </div>
-  
-</div>
+			<div class="card-deck" th:each="article : ${pageArticles}">
+				<a th:href="@{'/article/' + ${article.id}}">
+					<div class="card">
+						<img class="card-img-top"
+							src="https://www.w3schools.com/w3css/img_snowtops.jpg"
+							alt="Card image cap" />
+						<div class="card-body">
+							<h5 th:text="${article.title}" class="card-title"></h5>
+							<p class="card-text" th:text="${article.description}"></p>
+						</div>
+						<div class="card-footer">
+							<small class="text-muted">Ajouté le <span
+								th:text="${article.dateCreate}"></span></small>
+						</div>
+					</div>
+				</a>
+			</div>
+
+
+			<nav>
+				<ul class="pagination">
+					<li th:each="p:${pages}" th:class="${p==pageCourante}?'page-item active':''">
+						<a th:text="${p}" th:href="@{index(page=${p})}" class="page-link"></a>
+					</li>
+				</ul>
+			</nav>
+		</div>
 
 	</div>
 </body>
