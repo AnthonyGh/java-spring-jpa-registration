@@ -14,31 +14,37 @@
 	<div layout:fragment="content">
 <div class="container">
 
-    <div class="jumbotron">
-        <h1>Formulaire de soumission à la création d'article</h1>
+    <div class="jumbotron bg-dark text-white">
+        <h1>Formulaire de création d'un Chapitre</h1>
     </div>
 
 
-	<form action="#" th:action="@{/user/saveArticle}" th:object="${article}" method="post">
+	<form action="#" th:action="@{/admin/updateChapitre}" th:object="${chapitre}" method="post">
+        	
+    	<div class="form-group">
+    	<label class="control-label">Id :</label>
+    	<input class="form-control" type="text" th:field="*{id}" />
+    	</div>
     	
     	<div class="form-group">
-    	<label class="control-label">Title:</label>
+    	<label class="control-label">Titre :</label>
     	<input class="form-control" type="text" th:field="*{title}" />
     	</div>
     	
+        <div class="form-group">
+    	<label class="control-label">Introduction:</label>
+    	<textarea class="form-control" th:field="*{introduction}"></textarea>
+    	</div>
     	
     	<div class="form-group">
-    	<label class="control-label">Description:</label>
-    	<input class="form-control" type="text" th:field="*{description}" />
+    	<select th:field="*{book}" class="form-control">
+	       <option th:each="b: ${bookList}" th:value="${b.id}" th:text="${b.title}"></option>
+	    </select>
     	</div>
     	
-    	
-        <div class="form-group">
-    	<label class="control-label">Content:</label>
-    	<textarea class="form-control" th:field="*{content}"></textarea>
-    	</div>
-    	
+    	<div class="form-group">
         <input class="btn btn-primary" type="submit" value="Submit" /> <input class="btn btn-primary" type="reset" value="Reset" />
+        </div>
     </form>
 	
 	

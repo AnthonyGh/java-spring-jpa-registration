@@ -6,4 +6,6 @@ import fr.registration.model.Section;
 
 public interface SectionRepository extends JpaRepository<Section, Integer>{
 
+	public Section findSectionById(Integer id);
+
 }

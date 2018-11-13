@@ -19,26 +19,28 @@
     </div>
 
 
-	<form action="#" th:action="@{/user/saveArticle}" th:object="${article}" method="post">
+	<form action="#" th:action="@{/admin/saveSection}" th:object="${section}" method="post">
     	
     	<div class="form-group">
-    	<label class="control-label">Title:</label>
+    	<label class="control-label">Titre :</label>
     	<input class="form-control" type="text" th:field="*{title}" />
     	</div>
     	
-    	
     	<div class="form-group">
-    	<label class="control-label">Description:</label>
-    	<input class="form-control" type="text" th:field="*{description}" />
-    	</div>
-    	
-    	
-        <div class="form-group">
     	<label class="control-label">Content:</label>
     	<textarea class="form-control" th:field="*{content}"></textarea>
     	</div>
     	
+    	
+    	<div class="form-group">
+    	<select th:field="*{chapitre}" class="form-control">
+	       <option th:each="c: ${chapitreList}" th:value="${c.id}" th:text="${c.title}"></option>
+	    </select>
+    	</div>
+    	
+    	<div class="form-group">
         <input class="btn btn-primary" type="submit" value="Submit" /> <input class="btn btn-primary" type="reset" value="Reset" />
+        </div>
     </form>
 	
 	

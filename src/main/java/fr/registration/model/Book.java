@@ -2,6 +2,7 @@ package fr.registration.model;
 
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -20,6 +21,7 @@ public class Book {
 	
 	private String collection;
 	
+	@Column(length=10000)
 	private String description;
 	
 	private String author;
@@ -29,7 +31,7 @@ public class Book {
 	private String cover;
 	
 	@OneToMany(fetch=FetchType.LAZY,mappedBy="book")
-	private List<Section> sections;
+	private List<Chapitre> chapitres;
 
 	public Integer getId() {
 		return id;
@@ -87,13 +89,14 @@ public class Book {
 		this.cover = cover;
 	}
 
-	public List<Section> getSections() {
-		return sections;
+	public List<Chapitre> getChapitres() {
+		return chapitres;
 	}
 
-	public void setSections(List<Section> sections) {
-		this.sections = sections;
+	public void setChapitres(List<Chapitre> chapitres) {
+		this.chapitres = chapitres;
 	}
+
 	
 	
 }

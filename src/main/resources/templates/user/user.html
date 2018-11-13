@@ -37,8 +37,8 @@
 					<td th:text="${e.title}"></td>
 					<td th:text="${e.description}"></td>
 					<td th:text="${e.dateCreate}"></td>
-					<td><a onclick="return confirm('Confirmer la suppression ?')" th:href="@{supprimer(id=${e.id})}">Supprimer</a></td>
-					<td><a th:href="@{editer(id=${e.id})}">Editer</a></td>
+					<td><a onclick="return confirm('Confirmer la suppression ?')" th:href="@{user/supprimer-article(id=${e.id})}">Supprimer</a></td>
+					<td><a th:href="@{user/editer-article(id=${e.id})}">Editer</a></td>
 				</tr>
 			</tbody>
 		</table>

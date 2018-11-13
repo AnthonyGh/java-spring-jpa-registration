@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 public class Section {
 	
@@ -21,17 +23,18 @@ public class Section {
 	
 	private String title;
 	
-	private String chapitre;
-	
 	@Column(length=10000)
 	private String content;
 	
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private LocalDate dateCreation;
 	
+	@DateTimeFormat(pattern="yyyy-MM-dd")
+	private LocalDate dateModification;
 	
 	@ManyToOne
-	@JoinColumn(name = "id_book")
-	private Book book;
+	@JoinColumn(name = "id_chapitre")
+	private Chapitre chapitre;
 
 	
 	
@@ -59,13 +62,7 @@ public class Section {
 		this.title = title;
 	}
 
-	public String getChapitre() {
-		return chapitre;
-	}
 
-	public void setChapitre(String chapitre) {
-		this.chapitre = chapitre;
-	}
 
 	public String getContent() {
 		return content;
@@ -82,14 +79,24 @@ public class Section {
 	public void setDateCreation(LocalDate dateCreation) {
 		this.dateCreation = dateCreation;
 	}
-
-	public Book getBook() {
-		return book;
+	
+	public LocalDate getDateModification() {
+		return dateModification;
 	}
 
-	public void setBook(Book book) {
-		this.book = book;
+	public void setDateModification(LocalDate dateModification) {
+		this.dateModification = dateModification;
 	}
+
+	public Chapitre getChapitre() {
+		return chapitre;
+	}
+
+	public void setChapitre(Chapitre chapitre) {
+		this.chapitre = chapitre;
+	}
+
+
 	
 	
 

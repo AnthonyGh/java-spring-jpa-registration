@@ -23,12 +23,16 @@
 
 		<p th:inline="text">Ton adresse email est :  [[${#httpServletRequest.remoteUser}]]!</p>
 		
-		<p><a th:href="@{/admin/creer-book}" class="btn btn-success">Créer un livre</a><a th:href="@{/logout}" class="btn btn-danger">Se déconnecter</a></p>
+	
+			
+			
+			<a th:href="@{/logout}" class="btn btn-danger">Se déconnecter</a>
+
 		
 		
 		
 		<hr />
-		
+		<h3>Tableau des livres <a th:href="@{/admin/creer-book}" class="btn btn-success">Créer un livre</a></h3> 
 		<table class="table table-striped table-dark">
 			<thead>
 				<tr>
@@ -47,8 +51,53 @@
 			</tbody>
 		</table>
 		
-		<hr />
 		
+		
+		
+		<hr />
+		<h3>Tableau des Chapitres <a th:href="@{/admin/creer-chapitre}" class="btn btn-success">Créer un Chapitre</a></h3> 
+		<table class="table table-striped table-dark">
+			<thead>
+				<tr>
+					<th>Titre</th><th>introduction</th><th>Supprimer</th><th>Editer</th><th>Voir</th>
+				</tr>
+			</thead>
+			<tbody>
+			<tr th:each="c : ${chapitres}">
+					<td th:text="${c.title}"></td>
+					<td th:text="${c.book.title}"></td>
+					
+					<td><a onclick="return confirm('Confirmer la suppression ?')" th:href="@{/admin/supprimer-chapitre(id=${c.id})}">Supprimer</a></td>
+					<td><a th:href="@{/admin/editer-chapitre(id=${c.id})}">Editer</a></td>
+					<td><a th:href="@{'/chapitre/' + ${c.id}}">Voir</a></td>
+				</tr>
+			</tbody>
+		</table>
+		
+		
+		<hr />
+		<h3>Tableau des Sections <a th:href="@{/admin/creer-section}" class="btn btn-success">Créer une Section</a></h3> 
+		<table class="table table-striped table-dark">
+			<thead>
+				<tr>
+					<th>Titre</th><th>Date Cr.</th><th>Date modif.</th><th>Supprimer</th><th>Editer</th><th>Voir</th>
+				</tr>
+			</thead>
+			<tbody>
+			<tr th:each="s : ${sections}">
+					<td th:text="${s.title}"></td>
+					<td th:text="${s.dateCreation}"></td>
+					<td th:text="${s.dateModification}"></td>
+					
+					<td><a onclick="return confirm('Confirmer la suppression ?')" th:href="@{/admin/supprimer-section(id=${s.id})}">Supprimer</a></td>
+					<td><a th:href="@{/admin/editer-section(id=${s.id})}">Editer</a></td>
+					<td><a th:href="@{'/section/' + ${s.id}}">Voir</a></td>
+				</tr>
+			</tbody>
+		</table>
+		
+		<hr />
+		<h3>Tableau des Articles <a th:href="@{/creer-article}" class="btn btn-success">Créer un Article</a></h3> 
        <table class="table table-striped table-dark">
 			<thead>
 				<tr>
@@ -61,8 +110,8 @@
 					<td th:text="${e.description}"></td>
 					<td th:text="${e.dateCreate}"></td>
 					<td th:text="${e.email}"></td>
-					<td><a onclick="return confirm('Confirmer la suppression ?')" th:href="@{supprimer-article(id=${e.id})}">Supprimer</a></td>
-					<td><a th:href="@{editer-article(id=${e.id})}">Editer</a></td>
+					<td><a onclick="return confirm('Confirmer la suppression ?')" th:href="@{user/supprimer-article(id=${e.id})}">Supprimer</a></td>
+					<td><a th:href="@{user/editer-article(id=${e.id})}">Editer</a></td>
 					<td><a th:href="@{'/article/' + ${e.id}}">Voir</a></td>
 				</tr>
 			</tbody>

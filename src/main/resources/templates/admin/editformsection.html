@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap4.css}" />
+
+<title>Section</title>
+</head>
+<body>
+	<div layout:fragment="content">
+		<div class="container">
+
+			<div class="jumbotron">
+				<h1>Formulaire de Création</h1>
+			</div>
+
+			<form th:action="@{/admin/updateSection}" method="post"
+				th:object="${section}" enctype="multipart/form-data">
+				<div class="form-group">
+					<label class="control-label">ID :</label> <input type="text"
+						th:field="*{id}" class="form-control" /> <span
+						class="text-danger" th:errors="*{id}"></span>
+				</div>
+				<div class="form-group">
+					<label class="control-label">Titre :</label> <input type="text"
+						th:field="*{title}" class="form-control" /> <span
+						class="text-danger" th:errors="*{title}"></span>
+				</div>
+
+				<div class="form-group">
+					<label class="control-label">Content :</label>
+					<textarea th:field="*{content}" class="form-control"></textarea>
+					<span class="text-danger" th:errors="*{content}"></span>
+				</div>
+
+				<div class="form-group">
+					<select th:field="*{chapitre}" class="form-control">
+						<option th:each="c: ${chapitreList}" th:value="${c.id}"
+							th:text="${c.title}"></option>
+					</select>
+				</div>
+
+				<div class="form-group">
+					<button type="submit" class="btn btn-primary">Mettre à
+						jour</button>
+				</div>
+			</form>
+
+		</div>
+	</div>
+
+</body>
+</html>

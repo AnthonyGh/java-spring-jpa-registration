@@ -33,7 +33,7 @@
 							alt="Card image cap" />
 						<div class="card-body">
 							<h5 th:text="${article.title}" class="card-title"></h5>
-							<p class="card-text" th:text="${article.description}"></p>
+							<p class="card-text" th:text="${#strings.abbreviate(article.description,100)}">...</p>
 						</div>
 						<div class="card-footer">
 							<small class="text-muted">Ajouté le <span
@@ -62,7 +62,8 @@
 				<div class="jumbotron">
 					<img th:src="@{getCover(id=${b.id})}" style="float:left; width:200px; margin-top:-50px;"/>
 					<h1 th:text="${b.title}"></h1>
-					<a class="btn btn-primary" th:href="@{'/book/' + ${b.id}}">Aller voir la description</a>
+					<p th:text="${#strings.abbreviate(b.description,200)}">...</p>
+					<a class="btn btn-primary" th:href="@{'/book/' + ${b.id}}">Voir la description -></a>
 					
 				</div>
 			</div>

@@ -34,6 +34,11 @@ public class SectionServiceImpl implements SectionService{
 		return dao.findAll();
 	}
 
+	@Override
+	public Section findSectionById(Integer id) {
+		return dao.findSectionById(id);
+	}
+
 	
 	
 }

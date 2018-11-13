@@ -17,4 +17,6 @@ public interface SectionService {
 
 	public List<Section> findAllSections();
 
+	public Section findSectionById(Integer id);
+
 }

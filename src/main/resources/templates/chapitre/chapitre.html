@@ -8,16 +8,15 @@
 <link rel="stylesheet" type="text/css"
 	th:href="@{/css/bootstrap4.css}" />
 
-<title>Book</title>
+<title>Article</title>
 </head>
 <body>
 	<div layout:fragment="content">
 <div class="container">
 	
-	<h1 th:text="${book.title}"></h1>
+	<h1 th:text="${chapitre.title}"></h1>
 	
-	<p th:utext="${book.description}"></p>
-	
+	<p th:utext="${chapitre.introduction}"></p>
 	
 	
 	<div sec:authorize="!isAuthenticated()">
