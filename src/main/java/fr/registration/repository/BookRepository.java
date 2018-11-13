@@ -6,4 +6,6 @@ import fr.registration.model.Book;
 
 public interface BookRepository extends JpaRepository<Book, Integer> {
 
+	public Book findBookById(Integer id);
+
 }

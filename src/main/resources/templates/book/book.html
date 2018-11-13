@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layout">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="stylesheet" type="text/css"
+	th:href="@{/css/bootstrap4.css}" />
+
+<title>Book</title>
+</head>
+<body>
+	<div layout:fragment="content">
+<div class="container">
+	
+	<h1 th:text="${book.title}"></h1>
+	
+	<p th:utext="${book.description}"></p>
+	
+	
+	<div sec:authorize="!isAuthenticated()">
+  		<p>Je ne suis même pas identifier</p>
+	</div>
+	
+	<div sec:authorize="hasRole('ROLE_ADMIN')">
+		<p>Je peux te modifier</p>
+	</div>
+	
+	<div sec:authorize="hasRole('ROLE_USER')">
+		<p>Je ne peux pas te modifier</p>
+	</div>
+	
+</div>
+</div>
+</body>
+</html>

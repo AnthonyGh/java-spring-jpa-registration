@@ -61,7 +61,7 @@ public class ArticleController {
 	
 	
 	
-	@RequestMapping(value="/editer")
+	@RequestMapping(value="/editer-article")
 	public String showFormEdit(Integer id, Model model) {
 		Article article = articleService.findArticleById(id);		
 		model.addAttribute("article", article);
@@ -69,11 +69,17 @@ public class ArticleController {
 	}
 	
 	@RequestMapping(value="/updateArticle", method=RequestMethod.POST)
-	public String updateArticle(@Valid Article article, BindingResult bindingResult) throws IllegalStateException, IOException {
+	public String updateArticle(@Valid Article article, BindingResult bindingResult, Principal principal) throws IllegalStateException, IOException {
 		if(bindingResult.hasErrors()) {
 			return "/user/editformarticle";
 		}
 
+
+		String userEmail = principal.getName();
+		
+		article.setDateCreate(LocalDate.now());
+		article.setEmail(userEmail);
+		
 		articleService.updateArticle(article);
 		
 		return "redirect:user";
@@ -81,7 +87,7 @@ public class ArticleController {
 	
 	
 	
-	@RequestMapping(value="/supprimer")
+	@RequestMapping(value="/supprimer-article")
 	public String supprimer(Integer id) {
 		articleService.deleteArticleById(id);
 		return "redirect:/user";

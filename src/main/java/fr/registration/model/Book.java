@@ -26,6 +26,8 @@ public class Book {
 	
 	private String annee;
 	
+	private String cover;
+	
 	@OneToMany(fetch=FetchType.LAZY,mappedBy="book")
 	private List<Section> sections;
 
@@ -75,6 +77,14 @@ public class Book {
 
 	public void setAnnee(String annee) {
 		this.annee = annee;
+	}
+
+	public String getCover() {
+		return cover;
+	}
+
+	public void setCover(String cover) {
+		this.cover = cover;
 	}
 
 	public List<Section> getSections() {

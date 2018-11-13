@@ -8,8 +8,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import fr.registration.model.Article;
+import fr.registration.model.Book;
 import fr.registration.model.User;
 import fr.registration.service.ArticleService;
+import fr.registration.service.BookService;
 import fr.registration.service.UserService;
 
 @Controller
@@ -21,6 +23,8 @@ public class AdminController {
 	@Autowired
 	private UserService userService;
 	
+	@Autowired BookService bookService;
+	
 	
 	@GetMapping("/admin")
 	public String admin(Model model, Principal principal) {
@@ -29,11 +33,13 @@ public class AdminController {
 		
 		User user = userService.findByEmail(userEmail);
 		
+		List<Book> books = bookService.findAllBooks();
 		
 		List<Article> articles = articleService.findAllArticles();
 		
 		model.addAttribute("articles", articles);
 		model.addAttribute("user", user);
+		model.addAttribute("books", books);
     	
 		 return "/admin/admin";
 	 }

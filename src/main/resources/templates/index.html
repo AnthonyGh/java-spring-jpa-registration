@@ -52,8 +52,21 @@
 					</li>
 				</ul>
 			</nav>
+			<hr />
 		</div>
+		
+		
 
+		<div class="container">
+			<div th:each="b : ${books}">
+				<div class="jumbotron">
+					<img th:src="@{getCover(id=${b.id})}" style="float:left; width:200px; margin-top:-50px;"/>
+					<h1 th:text="${b.title}"></h1>
+					<a class="btn btn-primary" th:href="@{'/book/' + ${b.id}}">Aller voir la description</a>
+					
+				</div>
+			</div>
+		</div>
 	</div>
 
 

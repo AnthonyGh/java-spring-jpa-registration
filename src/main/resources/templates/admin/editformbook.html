@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap4.css}" />
+
+<title>Article</title>
+</head>
+<body>
+	<div layout:fragment="content">
+		<div class="container">
+
+			<div class="jumbotron">
+				<h1>Formulaire de Création</h1>
+			</div>
+
+			<form th:action="@{updateBook}" method="post"
+				th:object="${book}" enctype="multipart/form-data">
+				<div class="form-group">
+					<label class="control-label">ID :</label> <input type="text"
+						th:field="*{id}" class="form-control" /> <span class="text-danger"
+						th:errors="*{id}"></span>
+				</div>
+				<div class="form-group">
+					<label class="control-label">Titre :</label> <input type="text"
+						th:field="*{title}" class="form-control" /> <span
+						class="text-danger" th:errors="*{title}"></span>
+				</div>
+				<div class="form-group">
+					<label class="control-label">Description :</label> <textarea
+						type="text" th:field="*{description}" class="form-control"></textarea> <span
+						class="text-danger" th:errors="*{description}"></span>
+				</div>
+				<div class="form-group">
+					<label class="control-label">Collection :</label>
+					<textarea th:field="*{collection}" class="form-control"></textarea>
+					<span class="text-danger" th:errors="*{collection}"></span>
+				</div>
+
+				<div class="form-group">
+					<label class="control-label">Année :</label> <input type="text"
+						th:field="*{annee}" class="form-control" /> <span
+						class="text-danger" th:errors="*{annee}"></span>
+				</div>
+				
+				<div class="form-group">
+					<label class="control-label">Auteur :</label> <input type="text"
+						th:field="*{author}" class="form-control" /> <span
+						class="text-danger" th:errors="*{author}"></span>
+				</div>
+
+				<div class="form-group">
+					<label class="control-label">Couverture :</label>
+					<input type="file" name="picture" class="form-control" />
+				</div>
+
+				<div class="form-group">
+					<button type="submit" class="btn btn-primary">Mettre à
+						jour</button>
+				</div>
+			</form>
+
+		</div>
+	</div>
+
+</body>
+</html>

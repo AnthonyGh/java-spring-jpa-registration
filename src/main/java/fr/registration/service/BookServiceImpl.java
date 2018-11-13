@@ -34,6 +34,11 @@ public class BookServiceImpl implements BookService{
 		return dao.findAll();
 	}
 
+	@Override
+	public Book findBookById(Integer id) {
+		return dao.findBookById(id);
+	}
+
 	
 	
 }

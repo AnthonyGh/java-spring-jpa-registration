@@ -47,6 +47,14 @@
 			<artifactId>commons-beanutils</artifactId>
 		</dependency>
 
+
+		<!-- https://mvnrepository.com/artifact/commons-io/commons-io Pour les images -->
+		<dependency>
+		    <groupId>commons-io</groupId>
+		    <artifactId>commons-io</artifactId>
+		    <version>2.6</version>
+		</dependency>
+		
 		<!-- bootstrap and jquery -->
 		<dependency>
 			<groupId>org.webjars</groupId>
